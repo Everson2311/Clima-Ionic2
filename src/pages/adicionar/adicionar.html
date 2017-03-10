@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Adicionar Tempo</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="fechar()"> 
+        <ion-icon name="close-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    
+    <ion-item>
+      <ion-label stacked>Cidade</ion-label>
+      <ion-input type="text" [(ngModel)]="data.cidade"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>País</ion-label>
+      <ion-select [(ngModel)]="data.pais">
+        <ion-option value="br">Brasil</ion-option>
+        <ion-option value="us">Estados Unidos</ion-option>
+        <ion-option value="uk">Reino Unido</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div padding>
+    <button ion-button block (click)="dismiss(data)">Adicionar</button>
+  </div>
+</ion-content>

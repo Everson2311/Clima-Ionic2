@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button color="royal" (click)="adicionarClima()">
+        Adicionar
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <clima 
+      [clima]="climaLocal"
+      (verMais)="verPrevisao($event)" >
+    </clima>
+    <!--<ion-item *ngIf="climaLocal" (click)="verPrevisao(climaLocal)">
+      <ion-thumbnail item-left>
+        <img src="http://openweathermap.org/img/w/{{climaLocal.weather[0].icon}}.png" alt="">
+      </ion-thumbnail>
+      <h2>{{climaLocal.main.temp | temperatura: 'C'}}</h2>
+      <h3>{{climaLocal.name}}</h3>
+      <p>Mínima: {{climaLocal.main.temp_min | temperatura: 'C'}} Máxima: {{climaLocal.main.temp_max | temperatura: 'C'}}</p>
+      <ion-icon name="arrow-forward" item-right></ion-icon>
+    </ion-item>-->
+
+    <clima 
+      *ngFor="let tempo of climaList"
+      [clima]="tempo"
+      (verMais)="verPrevisao($event)" >
+    </clima>
+    <!--<ion-item *ngFor="let tempo of climaList" (click)="verPrevisao(tempo)">
+      <ion-thumbnail item-left>
+        <img src="http://openweathermap.org/img/w/{{tempo.weather[0].icon}}.png" alt="">
+      </ion-thumbnail>
+      <h2>{{tempo.main.temp | temperatura: 'C'}}</h2>
+      <h3>{{tempo.name}}</h3>
+      <p>Mínima: {{tempo.main.temp_min | temperatura: 'C'}} Máxima: {{tempo.main.temp_max | temperatura: 'C'}}</p>
+      <ion-icon name="arrow-forward" item-right></ion-icon>
+    </ion-item>-->
+  </ion-list>
+</ion-content>

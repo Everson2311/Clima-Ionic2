@@ -1,0 +1,9 @@
+<ion-item *ngIf="clima" (click)="clickClima(clima)">
+  <ion-thumbnail item-left>
+    <img src="http://openweathermap.org/img/w/{{clima.weather[0].icon}}.png" alt="">
+  </ion-thumbnail>
+  <h2>{{clima.main.temp | temperatura: 'C'}}</h2>
+  <h3>{{clima.name}}</h3>
+  <p>Mínima: {{clima.main.temp_min | temperatura: 'C'}} Máxima: {{clima.main.temp_max | temperatura: 'C'}}</p>
+  <ion-icon name="arrow-forward" item-right></ion-icon>
+</ion-item>
